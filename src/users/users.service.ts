@@ -6,7 +6,7 @@ import { UserDto } from './dto/user.dto';
 @Injectable()
 export class UsersService {
   create(createUserDto: CreateUserDto): UserDto {
-    const response = new UserDto();
+    const response: UserDto = new UserDto();
     const randomInteger = Math.floor(Math.random() * 1000);
     response.id = randomInteger;
     response.age = createUserDto.age;
@@ -38,8 +38,7 @@ export class UsersService {
 
   update(id: number, updateUserDto: UpdateUserDto): UserDto {
     const response = new UserDto();
-    const randomInteger = Math.floor(Math.random() * 1000);
-    response.id = randomInteger;
+    response.id = id;
     response.age = updateUserDto.age;
     response.email = updateUserDto.email;
     response.name = updateUserDto.name;
