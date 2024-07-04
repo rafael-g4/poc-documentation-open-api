@@ -1,0 +1,8 @@
+/* eslint-disable */
+export default async () => {
+    const t = {
+        ["./dto/health.dto"]: await import("./dto/health.dto"),
+        ["./dto/user.dto"]: await import("./dto/user.dto")
+    };
+    return { "@nestjs/swagger": { "models": [[import("./dto/health.dto"), { "HealthDto": { status: { required: true, type: () => String } } }], [import("./dto/create-user.dto"), { "CreateUserDto": { name: { required: true, type: () => String }, email: { required: true, type: () => String }, password: { required: true, type: () => String }, age: { required: true, type: () => Number } } }], [import("./dto/update-user.dto"), { "UpdateUserDto": {} }], [import("./dto/user.dto"), { "UserDto": { id: { required: true, type: () => Number }, name: { required: true, type: () => String }, email: { required: true, type: () => String }, password: { required: true, type: () => String }, age: { required: true, type: () => Number } } }], [import("./dto/create-user-error.dto"), { "CreateUserErrorDto": { error: { required: true, type: () => String }, message: { required: true, type: () => String } } }], [import("./dto/identifier-user-params.dto"), { "IdentifierUserParamsDto": { id: { required: true, type: () => Number } } }]], "controllers": [[import("./health/health.controller"), { "HealthController": { "status": { type: t["./dto/health.dto"].HealthDto } } }], [import("./users/users.controller"), { "UsersController": { "create": { type: t["./dto/user.dto"].UserDto }, "findAll": { type: [t["./dto/user.dto"].UserDto] }, "findOne": { type: t["./dto/user.dto"].UserDto }, "update": { type: t["./dto/user.dto"].UserDto }, "remove": {} } }]] } };
+};
