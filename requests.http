@@ -1,0 +1,30 @@
+### create user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "rafael",
+  "email": "rafael_sousa2018@outlook.com",
+  "password": "minhapassword",
+  "age": 24
+}
+
+### get all users
+GET http://localhost:3000/users
+
+### get specific users
+GET http://localhost:3000/users/1
+
+### update specific user
+PATCH http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+  "name": "rafael",
+  "email": "rafael_sousa2018@outlook.com",
+  "password": "minhapassword",
+  "age": 24
+}
+
+### delete specific user
+DELETE http://localhost:3000/users/1
